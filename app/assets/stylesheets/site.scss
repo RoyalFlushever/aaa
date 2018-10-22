@@ -1,0 +1,50 @@
+.full_div {
+    // width: 100vw;
+    // height: 100vh;
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center_div {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+min-width: 400px;
+}
+
+.authform {
+    padding-top: 30px;
+    max-width: 320px;
+    margin: 0 auto;
+    form {
+        padding-bottom: 40px;
+    }
+    .form-group {
+        margin-top: 20px;
+    }
+    .right {
+        float: right !important;
+    }
+    .row {
+        padding-left: 7px;
+        padding-rightt: 7px;
+        margin: 10px 0px; 
+    }
+    .col {
+        flex-grow: 1;
+        margin: 10px 0px;
+    }
+
+    .action {
+        .btn {
+            margin: 15px 15px;
+        }
+    }
+}
+.flex_div {
+    display: flex;
+}
+
