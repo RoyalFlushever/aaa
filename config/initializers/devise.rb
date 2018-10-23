@@ -262,6 +262,15 @@ Devise.setup do |config|
     scope: 'email, public_profile, user_friends', 
     info_fields: 'email, first_name, last_name, gender, picture.width(300).height(300)'
 
+  config.omniauth :google_oauth2,
+    ENV['GOOGLE_APP_ID'],
+    ENV['GOOGLE_APP_SECRET']
+    # {
+    #   scope: "profile, email",
+    #   prompt: "select_account",
+    #   client_options: {ssl: {verify: false}}
+    # }
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
