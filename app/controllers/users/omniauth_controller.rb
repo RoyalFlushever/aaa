@@ -1,4 +1,4 @@
-class Users::OmniauthController < ApplicationController
+class Users::OmniauthController < Devise::OmniauthCallbacksController
   # facebook callback
   def facebook
     # create a user from auth data

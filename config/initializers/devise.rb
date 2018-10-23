@@ -142,7 +142,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -256,14 +256,11 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook,
-    ENV['FACEBOOK_APP_ID'],
-    ENV['FACEBOOK_APP_SECRET'],
-    scope: 'email, public_repo',
-    client_options: {
-      site: 'https://graph.facebook.com/v3.0',
-      authorize_url: "https://www.facebook.com/v3.0/dialog/oauth"
-    }
+  config.omniauth :facebook, 
+    ENV['FACEBOOK_APP_ID'], 
+    ENV['FACEBOOK_APP_SECRET'], 
+    scope: 'email, public_profile, user_friends', 
+    info_fields: 'email, first_name, last_name, gender, picture.width(300).height(300)'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
