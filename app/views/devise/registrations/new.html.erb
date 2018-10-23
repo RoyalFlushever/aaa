@@ -32,6 +32,13 @@
     <%= f.submit 'Sign Up', :class => 'btn btn-primary form-control col' %>
     <%= link_to 'Cancel', new_session_path(resource_name), class: 'btn btn-primary form-control col' %>
   </div>
+
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    <% end -%>
+  <% end -%>
+
 <% end %>
 
 </div>
