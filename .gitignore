@@ -31,3 +31,6 @@
 
 # bundle - gem
 /vendor/*
+
+# environemnt variables
+.env
