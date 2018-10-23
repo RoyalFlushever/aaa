@@ -33,10 +33,18 @@
     <%= link_to 'Cancel', new_session_path(resource_name), class: 'btn btn-primary form-control col' %>
   </div>
 
+  <%- if devise_mapping.omniauthable? %>
+    <div class="form-group">
+    <%= link_to user_facebook_omniauth_authorize_path, class: 'fb btn form-control' do %>
+      <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+    <% end %>
+
+    <%= link_to user_google_auth2_omniauth_authorize_path, class: 'google btn form-control' do %>
+      <i class="fa fa-google fa-fw"></i> Login with Google
+    <% end %>
+    </div>
+  <% end -%>
 
 <% end %>
-  <%- if devise_mapping.omniauthable? %>
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-  <% end -%>
 
 </div>

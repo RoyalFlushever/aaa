@@ -18,4 +18,8 @@ class Users::OmniauthController < Devise::OmniauthCallbacksController
     end
 
   end
+
+  # google callback
+  def google
+  end
 end

@@ -15,6 +15,23 @@
 min-width: 400px;
 }
 
+/* style inputs and link buttons */
+input,
+.btn {
+  border: none;
+  border-radius: 4px;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+  opacity: 1;
+  color: white;
+}
+
 .authform {
     padding-top: 30px;
     max-width: 320px;
@@ -48,3 +65,19 @@ min-width: 400px;
     display: flex;
 }
 
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
