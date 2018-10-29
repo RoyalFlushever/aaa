@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset="UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<h1>New User!</h1>
+<p>
+  <strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %> <br>
+  <strong>Email:</strong> <%= @user.email %> <br>
+
+  <strong>Creation Time:</strong> <%= @user.created_at.strftime("%m/%d/%Y - %I:%M%p") %><br>
+</p>
+</body>
+</html>

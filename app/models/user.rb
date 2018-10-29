@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  after_create :notify_admin
+
   def self.create_from_provider_data(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do | user |
       user.email = provider_data.info.email
@@ -15,5 +17,10 @@ class User < ApplicationRecord
       user.last_name = provider_data.info.last_name
       user.skip_confirmation!
     end
+  end
+
+  def notify_admin
+    # UserMailer.new_user(self).deliver if Rails.env.production?
+    UserMailer.new_user(self).deliver_now!
   end
 end
