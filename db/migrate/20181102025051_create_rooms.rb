@@ -6,8 +6,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.integer :accommodate
       t.integer :bedroom
       t.integer :bathroom
-      t.decimal10 :price
-      t.decimal2 :price
+      t.decimal :price
       t.text :summary
       t.string :name
       t.float :latitude
