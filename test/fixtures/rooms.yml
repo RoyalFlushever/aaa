@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_type: 1
+  room_type: 1
+  accommodate: 1
+  bedroom: 1
+  bathroom: 1
+  price: 
+  price: 
+  summary: MyText
+  name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  active: false
+
+two:
+  home_type: 1
+  room_type: 1
+  accommodate: 1
+  bedroom: 1
+  bathroom: 1
+  price: 
+  price: 
+  summary: MyText
+  name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  active: false
