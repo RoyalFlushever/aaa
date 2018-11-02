@@ -2,7 +2,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
   def change
     create_table :rooms do |t|
       t.integer :home_type, default: 0
-      t.integer :room_type, default: 0
+      t.string :room_type
       t.integer :accommodate
       t.integer :bedroom
       t.integer :bathroom
@@ -14,6 +14,8 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.boolean :active, default: true
 
       t.timestamps
+
+      add_reference :rooms, :user, index: true
     end
   end
 end

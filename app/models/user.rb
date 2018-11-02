@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  has_many :rooms
+
   # after_create :notify_admin
 
   def self.create_from_provider_data(provider_data)

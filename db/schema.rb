@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_02_025051) do
+ActiveRecord::Schema.define(version: 2018_11_02_040656) do
 
   create_table "rooms", force: :cascade do |t|
     t.integer "home_type"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_11_02_025051) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
