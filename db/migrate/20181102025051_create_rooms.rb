@@ -14,8 +14,6 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.boolean :active, default: true
 
       t.timestamps
-
-      add_reference :rooms, :user, index: true
     end
   end
 end
