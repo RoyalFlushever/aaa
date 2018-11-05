@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :terms
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,6 +8,8 @@ class User < ApplicationRecord
          :lockable, :timeoutable, :trackable
 
   devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
+  validates :terms, acceptance: true
 
   has_many :rooms
 
